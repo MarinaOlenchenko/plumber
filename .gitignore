@@ -1,0 +1,11 @@
+.pnpm-store/
+node_modules/
+.sass-cache/
+*.map
+/.agents/
+/AGENTS.md
+/DESIGN_SYSTEM.md
+/TASK.md
+/b41f89a8-93d2-468b-b40c-f3d690a7623e.png
+/header-*.png
+/layout-desktop.png

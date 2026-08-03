@@ -1,0 +1,147 @@
+.hero {
+  padding-block: var(--space-16) var(--space-18);
+  background: var(--color-background-soft);
+}
+
+.hero__container {
+  align-items: center;
+}
+
+.hero__content {
+  min-width: 0;
+  grid-column: 1 / span 5;
+}
+
+.hero__actions {
+  margin-top: var(--space-8);
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.hero__features {
+  margin-top: var(--space-11);
+}
+
+.hero__visual {
+  min-width: 0;
+  display: grid;
+  gap: var(--space-4);
+  grid-column: 7 / -1;
+}
+
+.hero__picture {
+  width: 100%;
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: var(--radius-large);
+}
+
+.hero__image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero__emergency-card {
+  width: 100%;
+}
+
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  .hero {
+    padding-block: var(--space-20);
+  }
+
+  .hero__container {
+    align-items: stretch;
+    row-gap: var(--space-6);
+  }
+
+  .hero__content {
+    align-self: center;
+    grid-column: 1 / span 4;
+    grid-row: 1;
+  }
+
+  .hero__actions {
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin-top: var(--space-6);
+  }
+
+  .hero__features {
+    display: none;
+  }
+
+  .hero__visual {
+    display: contents;
+  }
+
+  .hero__picture {
+    min-height: 480px;
+    grid-column: 5 / -1;
+    grid-row: 1 / span 2;
+    aspect-ratio: auto;
+  }
+
+  .hero__image {
+    object-position: 75% center;
+  }
+
+  .hero__emergency-card {
+    align-self: start;
+    grid-column: 1 / span 4;
+    grid-row: 2;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .hero {
+    padding-block: var(--space-5) 0;
+  }
+
+  .hero__container {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: stretch;
+  }
+
+  .hero__content {
+    grid-column: 1;
+  }
+
+  .hero__actions {
+    display: grid;
+    gap: var(--space-2);
+    margin-top: var(--space-4);
+  }
+
+  .hero__features {
+    display: none;
+  }
+
+  .hero__visual {
+    display: contents;
+  }
+
+  .hero__picture {
+    width: calc(100% + (var(--container-gutter) * 2));
+    grid-column: 1;
+    order: 3;
+    aspect-ratio: 2.25 / 1;
+    margin-left: calc(var(--container-gutter) * -1);
+    border-radius: 0;
+  }
+
+  .hero__image {
+    object-position: center 48%;
+  }
+
+  .hero__emergency-card {
+    grid-column: 1;
+    order: 2;
+    margin-block: var(--space-2) var(--space-3);
+  }
+}

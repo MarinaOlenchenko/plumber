@@ -1,158 +1,148 @@
-# RohrFix24 Website
+# RohrFix24
 
-A modern, production-ready corporate website for a German plumbing and heating service company.
+Responsive portfolio website for a fictional German plumbing and heating service company.
 
-## Project Goal
+I implemented the project from approved Desktop, Tablet, and Mobile design references. The main goals were accurate design reproduction, reusable component architecture, accessible interactions, and stable responsive behavior across different screen sizes.
 
-Build a high-quality commercial website that meets modern frontend development standards and is suitable for real-world production.
+The website content is written in German and presents emergency plumbing services, installation, repair, heating maintenance, bathroom renovation, and customer contact options.
 
-The project should look and feel like it was created by a professional digital agency rather than generated automatically.
+## My Contribution
 
-## Target Audience
+- Translated the provided layouts into semantic HTML.
+- Built the interface using reusable BEM components.
+- Implemented separate Desktop, Tablet, and Mobile layouts.
+- Created a scalable SCSS architecture for components, sections, and layout utilities.
+- Centralized all breakpoints, media queries, and responsive mixins.
+- Implemented an accessible responsive navigation menu.
+- Added form validation for names, phone numbers, email addresses, required fields, and privacy consent.
+- Added loading, error, and success states to the contact form.
+- Implemented hover, focus-visible, active, and disabled states for interactive controls.
+- Added a smooth scroll-to-top control.
+- Optimized images with local AVIF and WebP sources.
+- Added basic SEO metadata, Open Graph data, and structured data.
+- Tested the layout for horizontal overflow, element collisions, broken images, and keyboard interaction.
 
-- Homeowners
-- Apartment owners
-- Property managers
-- Small businesses
-- Customers looking for plumbing, heating, emergency, and maintenance services
+## Main Features
 
-## Core Services
+- Emergency service and appointment call-to-action elements.
+- Service overview with reusable cards and custom icons.
+- Company advantages and trust indicators.
+- About section with responsive imagery.
+- Step-by-step service process.
+- Customer reviews.
+- Contact form with custom client-side validation.
+- Responsive Header and Footer.
+- Smooth navigation and scroll behavior.
+- Accessible focus management and reduced-motion support.
 
-- Plumbing Installation
-- Plumbing Repair
-- Heating Installation
-- Heating Repair
-- Emergency Service (24/7)
-- Pipe Repair
-- Leak Detection
-- Bathroom Renovation
-- Maintenance
+## Responsive Design
 
-## Tech Stack
+The project follows a Desktop-first workflow:
+
+- **Wide Desktop:** `1280px` and above.
+- **Compact Desktop:** `1024px` to `1279.98px`.
+- **Tablet:** `768px` to `1023.98px`.
+- **Mobile:** below `768px`.
+
+Wide Desktop styles are defined in the component partials. All responsive overrides, breakpoint variables, and mixins are located in one file:
+
+```text
+scss/responsive/_responsive.scss
+```
+
+This makes it possible to adjust responsive boundaries without searching through individual components.
+
+## Architecture
+
+```text
+/
+|-- assets/
+|   |-- icons/
+|   `-- images/
+|-- css/
+|   `-- main.css
+|-- js/
+|   `-- main.js
+|-- scss/
+|   |-- base/
+|   |-- components/
+|   |-- layout/
+|   |-- responsive/
+|   |-- sections/
+|   `-- main.scss
+|-- index.html
+|-- package.json
+`-- README.md
+```
+
+SCSS files are the source of truth. The browser uses the compressed and generated `css/main.css` file.
+
+Components are independent and can be added, removed, or reused without relying on parent section selectors.
+
+## Technologies
 
 - HTML5
-- SCSS with Dart Sass
-- Compiled CSS3
+- SCSS and CSS3
+- CSS Grid
+- Flexbox
+- BEM methodology
 - Vanilla JavaScript
+- Dart Sass
+- Prettier
+- Git and GitHub
 
-No frameworks.
+No frontend frameworks or UI libraries are used.
 
-## Development Principles
+## Accessibility
 
-- Desktop First
-- Pixel Perfect implementation
-- Component-based architecture
-- Strict BEM methodology
-- Semantic HTML
-- Responsive design
-- Accessibility (WCAG)
-- Performance-first approach
+- Semantic document structure.
+- Logical heading hierarchy.
+- Descriptive image alternative text.
+- Visible keyboard focus states.
+- Keyboard-accessible navigation.
+- Accessible form labels and error messages.
+- Comfortable touch targets for interactive controls.
+- Reduced-motion support.
+- ARIA attributes for dynamic interface states.
 
-## Project Structure
+## Local Development
 
-```
-/
-├── README.md
-├── index.html
-├── package.json
-├── scss/
-│   ├── base/
-│   ├── layout/
-│   ├── components/
-│   ├── sections/
-│   ├── responsive/
-│   │   └── _responsive.scss
-│   └── main.scss
-├── css/
-│   └── main.css
-├── js/
-├── assets/
-│   ├── images/
-│   └── icons/
-```
-
-`scss/main.scss` is the only SCSS entry point. Component partials contain the wide Desktop defaults and remain independent. Every media query, breakpoint variable, and responsive mixin is centralized in `scss/responsive/_responsive.scss` under clearly labeled Desktop, Tablet, and Mobile groups. `css/main.css` is generated and should not be edited manually.
-
-## SCSS Commands
+Install the development dependencies:
 
 ```bash
-npm install
+npm ci
+```
+
+Compile SCSS into compressed CSS:
+
+```bash
 npm run build:css
+```
+
+Watch SCSS files during development:
+
+```bash
 npm run watch:css
+```
+
+Format SCSS source files:
+
+```bash
 npm run format:scss
 ```
 
-## Development Workflow
+Open `index.html` through a local development server after building the styles.
 
-Development is performed in the following order:
+## Demo Limitations
 
-1. Desktop
-2. Tablet
-3. Mobile
+This is a portfolio project rather than a commercial website.
 
-Each stage must be completed and approved before moving to the next one.
+- The contact form uses a public test endpoint.
+- Personal form values are not included in the demo request and are not stored.
+- Contact details and company information are fictional.
+- Some links are included to demonstrate interface states and navigation structure.
+- A real production version would require a private backend, spam protection, legal review, and real business data.
 
-## Design Requirements
+## Repository
 
-The provided design mockup is the single source of truth.
-
-Implementation must reproduce the design as accurately as possible.
-
-Do not modify:
-
-- layout
-- spacing
-- typography
-- component positions
-- visual hierarchy
-- proportions
-
-If something does not fit, fix the implementation instead of changing the design.
-
-## Quality Requirements
-
-The final website must provide:
-
-- clean architecture
-- reusable components
-- scalable codebase
-- maintainable CSS
-- high readability
-- modern UX/UI
-- excellent Core Web Vitals
-- accessibility compliance
-
-## Browser Support
-
-- Chrome
-- Edge
-- Firefox
-- Safari
-
-Latest stable versions.
-
-## Project Status
-
-The Desktop, Tablet, and Mobile layouts are implemented. Desktop starts at `1024px` and keeps the complete horizontal navigation. Tablet covers `768px` through `1023px` and uses an accessible burger menu, a reduced content flow without Reviews, and the repeated Final CTA. Its Contact section keeps the written request form while omitting repeated contact details. Mobile covers widths below `768px`, follows the approved `390px` composition, and omits repeated Reviews, Contact, and Final CTA sections. Contact-form validation, responsive navigation, and the scroll-to-top control use minimal JavaScript.
-
-The portfolio contact form sends a non-personal demo payload to `https://jsonplaceholder.typicode.com/posts`. Name, phone number, email, and message content remain in the browser and are not included in that test request. Replace the endpoint and payload mapping before production use.
-
-## Component Reuse Check
-
-The following fragment can be inserted into a separate test page without changing Header or Hero styles:
-
-```html
-<section class="section section--light">
-  <div class="container">
-    <div class="section-header">
-      <p class="section-header__eyebrow">Test</p>
-      <h2 class="section-header__title">Neue Sektion</h2>
-      <p class="section-header__description">Testbeschreibung</p>
-    </div>
-
-    <a class="button button--primary" href="#">Mehr erfahren</a>
-  </div>
-</section>
-```
-
-This verifies that the shared layout and UI blocks do not depend on `.site-header` or `.hero` parent selectors.
+[github.com/MarinaOlenchenko/plumber](https://github.com/MarinaOlenchenko/plumber)

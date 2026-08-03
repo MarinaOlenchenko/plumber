@@ -1,0 +1,16 @@
+.section {
+  padding-block: 120px;
+}
+
+.section--compact {
+  padding-block: 80px;
+}
+
+.section--light {
+  background: var(--color-background-soft);
+}
+
+.section--dark {
+  color: var(--color-background);
+  background: var(--color-text);
+}

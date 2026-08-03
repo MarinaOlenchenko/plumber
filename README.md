@@ -31,7 +31,8 @@ The project should look and feel like it was created by a professional digital a
 ## Tech Stack
 
 - HTML5
-- CSS3
+- SCSS with Dart Sass
+- Compiled CSS3
 - Vanilla JavaScript
 
 No frameworks.
@@ -47,26 +48,38 @@ No frameworks.
 - Accessibility (WCAG)
 - Performance-first approach
 
-Detailed coding standards are defined in **AGENTS.md**.
-
 ## Project Structure
 
 ```
 /
-├── AGENTS.md
 ├── README.md
 ├── index.html
-├── css/
+├── package.json
+├── scss/
 │   ├── base/
 │   ├── layout/
 │   ├── components/
 │   ├── sections/
+│   ├── responsive/
+│   │   └── _responsive.scss
+│   └── main.scss
+├── css/
 │   └── main.css
 ├── js/
 ├── assets/
 │   ├── images/
-│   ├── icons/
-│   └── fonts/
+│   └── icons/
+```
+
+`scss/main.scss` is the only SCSS entry point. Component partials contain the wide Desktop defaults and remain independent. Every media query, breakpoint variable, and responsive mixin is centralized in `scss/responsive/_responsive.scss` under clearly labeled Desktop, Tablet, and Mobile groups. `css/main.css` is generated and should not be edited manually.
+
+## SCSS Commands
+
+```bash
+npm install
+npm run build:css
+npm run watch:css
+npm run format:scss
 ```
 
 ## Development Workflow

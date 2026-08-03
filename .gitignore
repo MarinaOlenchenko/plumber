@@ -1,6 +1,7 @@
 .pnpm-store/
 node_modules/
 .sass-cache/
+.audit/
 *.map
 /.agents/
 /AGENTS.md

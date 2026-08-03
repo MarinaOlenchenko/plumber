@@ -14,16 +14,6 @@
   background: var(--color-background);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-medium);
-  transition:
-    border-color var(--transition-standard),
-    box-shadow var(--transition-standard),
-    transform var(--transition-standard);
-}
-
-.service-card:hover {
-  border-color: rgb(217 31 38 / 0.38);
-  box-shadow: var(--shadow-small);
-  transform: translateY(-2px);
 }
 
 .service-card__icon {
@@ -45,8 +35,4 @@
   font-size: 13px;
   line-height: 1.6;
   letter-spacing: normal;
-}
-
-.service-card__arrow {
-  display: none;
 }

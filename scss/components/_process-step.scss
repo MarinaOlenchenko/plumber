@@ -1,11 +1,26 @@
 .process-step {
   min-width: 0;
+  height: 100%;
   display: grid;
   grid-template-rows: auto minmax(var(--space-11), auto) auto;
   justify-items: center;
   align-content: start;
   gap: var(--space-4);
   text-align: center;
+}
+
+.process-step--interactive {
+  border-radius: var(--radius-medium);
+  transition:
+    color var(--transition-standard),
+    background-color var(--transition-standard),
+    box-shadow var(--transition-standard);
+}
+
+.process-step--interactive:hover,
+.process-step--interactive:focus-visible {
+  background: var(--color-background-soft);
+  box-shadow: var(--shadow-small);
 }
 
 .process-step__marker {
@@ -49,7 +64,6 @@
   letter-spacing: normal;
 }
 
-.process-step__mobile-number,
-.process-step__arrow {
+.process-step__mobile-number {
   display: none;
 }
